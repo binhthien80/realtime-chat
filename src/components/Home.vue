@@ -370,11 +370,11 @@ export default {
   },
   methods: {
     outsideClickListenerNav (e) {
-      this.showBoxEmoji.status =  _.find([...e.path], i => i === this.$refs.boxEmoji) !== undefined
+      this.showBoxEmoji.status = _.find([...e.path], i => i === this.$refs.boxEmoji) !== undefined
     }
   },
   mounted () {
-    this.$refs.screenChat.scrollTo(0,this.$refs.screenChat.scrollHeight)
+    this.$refs.screenChat.scrollTo(0, this.$refs.screenChat.scrollHeight)
   },
   created () {
     document.addEventListener('mouseup', this.outsideClickListenerNav)
