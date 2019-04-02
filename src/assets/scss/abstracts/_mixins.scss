@@ -1,0 +1,32 @@
+/// Mixin to manage responsive breakpoints
+/// @param {String} $breakpoint - Breakpoint name
+/// @require $breakpoints
+@mixin respond-to($breakpoint) {
+
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    // on mobile
+
+    // Prints a media query based on the value
+    @media (max-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+
+  }
+
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+    +"Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+/** mixin flexbox */
+@mixin d-flex($direction: row, $j-content: flex-start, $a-items: flex-start) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $j-content;
+  align-items: $a-items;
+}
+
+/** end mixin flexbox*/
