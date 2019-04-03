@@ -1,0 +1,221 @@
+// variables
+
+.main-login {
+  background-color: $blue-dark;
+  background-image: url(http://www.cfdesigner.com/codepen/rocket-page-bkg.png);
+  background-position: center;
+  background-size: cover;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 100%;
+  height: 100vh;
+  letter-spacing: (0.5/16)+rem;
+  line-height: (24/16)+rem;
+  position: relative;
+  width: 100vw;
+}
+
+h1,
+p {
+  margin-bottom: 2rem;
+}
+
+h1 {
+  font-size: (40/16)+rem;
+  font-weight: 700;
+  letter-spacing: (2/16)+rem;
+}
+
+p {
+  font-size: (16/16)+rem;
+  font-weight: 400;
+}
+
+#container {
+  color: #fff;
+  text-align: center;
+  min-height: 525px;
+  width: 320px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.buttons {
+  margin: 0;
+  padding: 0;
+
+  li {
+    list-style-type: none;
+    margin-bottom: 1rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  a {
+    border: solid 2px #fff;
+    border-radius: 4px;
+    color: #fff;
+    display: block;
+    font-weight: 600;
+    padding: 1rem;
+    padding: calc(1rem - 2px);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    vertical-align: middle;
+
+    &:hover {
+      background: $blue-light;
+      border-color: $blue-light;
+    }
+  }
+
+  .primary {
+    background-color: $red;
+    border-color: $red;
+    border: none;
+    border-bottom: solid 4px $red-dark;
+    color: #fff;
+
+    &:hover {
+      background: $red-light;
+      border-color: $red-dark;
+    }
+
+    &:active {
+      background: $red-dark;
+    }
+  }
+
+  .minor {
+    border: none;
+    color: $gray-light;
+    display: inline-block;
+    padding: 0.5rem;
+
+    &:hover {
+      background: none;
+      color: #fff;
+    }
+  }
+
+  .disabled {
+    background: none;
+    border: solid 2px $gray;
+    color: $gray;
+    //opacity: 0.5;
+    pointer-events: none;
+  }
+}
+
+form .field {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+form input[type='password'],
+form input[type='text'],
+form input[type='submit'] {
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font: inherit;
+  padding: 1rem;
+  width: 100%;
+}
+
+form input[type='password'],
+form input[type='text'] {
+  background-color: #3b4148;
+  border-radius: 0 4px 4px 0;
+}
+
+form input[type='password']:focus,
+form input[type='password']:hover,
+form input[type='text']:focus,
+form input[type='text']:hover {
+  background-color: #434a52;
+  outline: none;
+}
+
+form input[type='submit'] {
+  cursor: pointer;
+  font-weight: 600;
+  padding: 1rem;
+  padding: calc(1rem - 2px);
+  transition: all 0.2s ease;
+
+  &:focus {
+    background: $red-light;
+    outline: none;
+  }
+
+  &:active {
+    background: $red-dark;
+  }
+}
+
+form label {
+  background-color: #363b41;
+  border-radius: 4px 0 0 4px;
+  padding: 1rem;
+}
+
+.icon {
+  display: inline-block;
+  fill: #fff;
+  height: 1.5rem;
+  width: 2rem;
+  vertical-align: middle;
+}
+
+#footer {
+  display: block;
+  position: absolute;
+  bottom: 20px;
+  font-size: (14/16)+em;
+  text-align: center;
+  width: 100%;
+
+  ul {
+    padding: 0;
+  }
+
+  li {
+    border-left: solid 1px $blue-light;
+    display: inline-block;
+    list-style-type: none;
+    padding: 0 1em;
+
+    &:first-child {
+      border: none;
+    }
+  }
+
+  a {
+    color: $blue-light;
+    text-decoration: none;
+
+    &:hover {
+      color: $gray-light;
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+@include respond-to('medium') {
+  .main-login {
+    background-position: 130%;
+  }
+}
+
+@include respond-to('extra') {
+  .main-login {
+    background-position: 74%;
+  }
+}

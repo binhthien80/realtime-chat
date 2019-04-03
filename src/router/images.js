@@ -1,8 +1,11 @@
-import SearchIcons from '@/assets/images/search.png'
-import Chat from '@/assets/images/chat.png'
-import Location from '@/assets/images/location.png'
-import DigitalCampaign from '@/assets/images/digital-campaign.png'
-import TeamWork from '@/assets/images/teamwork.png'
+import SearchIcons from '@/assets/images/search.svg'
+import Chat from '@/assets/images/chat.svg'
+import Location from '@/assets/images/location.svg'
+import DigitalCampaign from '@/assets/images/digital-campaign.svg'
+import TeamWork from '@/assets/images/teamwork.svg'
+import ThemeLight from '@/assets/images/themelight.svg'
+import ThemeDark from '@/assets/images/themedark.svg'
+import Cog from '@/assets/images/cog.svg'
 
 // flag
 import flag1 from '@/assets/images/svg/flag1.svg'
@@ -91,7 +94,10 @@ const imgs = {
     Chat,
     Location,
     DigitalCampaign,
-    TeamWork
+    TeamWork,
+    ThemeLight,
+    ThemeDark,
+    Cog
   },
   flags: {
     flag1,
