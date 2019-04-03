@@ -1,0 +1,120 @@
+.webrtc--active__list--user {
+  left: 0% !important;
+}
+
+.webrtc--list--user {
+  flex-basis: 25%;
+  background: $gray;
+  height: 100vh;
+  overflow-y: scroll;
+  position: relative;
+  z-index: 100;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .webrtc--form__search {
+    @include d-flex(row, center, center);
+    height: 12vh;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    background: #363636;
+
+    input {
+      width: 60%;
+      height: 50px;
+      box-sizing: border-box;
+      background: rgba(0, 0, 0, .2);
+      border: none;
+      outline: none;
+      padding-left: 20px;
+      font-size: 1.1em;
+      cursor: pointer;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      background: rgba(0, 0, 0, .2);
+    }
+
+    div {
+      width: 15%;
+      height: 50px;
+      background: darken($color: lightsalmon, $amount: 10);
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      @include d-flex(row, center, center);
+    }
+  }
+
+  .webrtc--about {
+    @include d-flex(row);
+    padding: 10px;
+
+    &>img {
+      width: 65px;
+      height: 65px;
+      margin-left: 10%;
+      border: 2px solid $white;
+      border-radius: 50%;
+    }
+
+    &>.webrtc--info {
+      transform: translate(0, 40%);
+      margin-left: 20px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      &>.webrtc--info__name {
+        color: $white;
+        width: 100%;
+        font-size: 1.2rem;
+        white-space: nowrap;
+        overflow-x: scroll;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+
+      &>.webrtc--info__status {
+        color: rgba($color: $white, $alpha: .55);
+        flex-grow: 1;
+        @include d-flex(row, flex-start, center);
+      }
+    }
+  }
+}
+
+@include respond-to('medium') {
+  .webrtc--list--user {
+    width: 50%;
+    position: absolute;
+    left: -50%;
+    top: 0;
+    transition: .3s all ease-in-out;
+  }
+  .webrtc--button__show {
+    visibility: visible;
+  }
+}
+
+
+@include respond-to('small') {
+  .webrtc--list--user {
+    width: 60%;
+    left: -60%;
+  }
+}
+
+@include respond-to('extra') {
+  .webrtc--list--user {
+    width: 85%;
+    left: -85%;
+  }
+
+  .webrtc--button__show {
+    height: 35px;
+    width: 35px;
+  }
+}

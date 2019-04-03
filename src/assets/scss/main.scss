@@ -19,5 +19,9 @@ body {
 
 // layout
 @import 'layouts/VHome';
+@import 'layouts/VLogin';
 
 // components
+@import 'components/VListUsers';
+@import 'components/VChatBox';
+@import 'components/VThemeOptions';
