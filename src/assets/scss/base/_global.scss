@@ -14,6 +14,14 @@
   grid-template-columns:repeat(12, 1fr);
 }
 
+.webrtc-row{
+  @for $i from 1 through $columns{
+    .webrtc-col-xlg-#{$i}{
+      grid-column:span $i;
+    }
+  }
+}
+
 @include respond-to('extra'){
   .webrtc-row{
     @for $i from 1 through $columns{
@@ -110,12 +118,19 @@ h6, .h6 { font-size: $h6-font-size; }
   display: inline-block;
   margin-right: 10px;
 }
-
-.webrtc--status__busy {
+.webrtc--status__away {
   width: 10px;
   height: 10px;
   border-radius: 50%;
   background: $orange;
+  display: inline-block;
+  margin-right: 10px;
+}
+.webrtc--status__busy {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: firebrick;
   display: inline-block;
   margin-right: 10px;
 }
@@ -135,4 +150,8 @@ h6, .h6 { font-size: $h6-font-size; }
 
 .orange {
   color: $orange !important;
+}
+
+.red {
+  color: firebrick !important;
 }

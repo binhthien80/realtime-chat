@@ -1,4 +1,4 @@
-
+/* eslint-disable */
 .webrtc--button__show {
   height: 50px;
   width: 50px;
@@ -16,6 +16,221 @@
 
 .webrtc--active__list--user {
   left: 0% !important;
+}
+.moving-zone {
+  position: absolute;
+  top:40%; left:50%;
+  width:300px; height:120px;
+  margin: -60px 0 0 -150px;
+  perspective: 800px;
+  z-index: 1000;
+  transform: translate(-0%, -50%);
+}
+.popup-collapse{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,.9);
+  z-index: 1000;
+}
+.popup-nav {
+  position: absolute;
+  width:400px;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 20px 0 20px 0;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  background: -webkit-linear-gradient( to bottom left, white 0%,  coral 90%);
+  background:    -moz-linear-gradient( to bottom left, white 0%,  coral 90%);
+  background:     -ms-linear-gradient( to bottom left, white 0%,  coral 90%);
+  background:      -o-linear-gradient( to bottom left, white 0%,  coral 90%);
+  background:         linear-gradient( to bottom left, white 0%,  coral 90%);
+}
+.popup-nav:before {
+  content: '';
+  position: absolute;
+  left:5%; top:5%;
+  width:90%; height:90%;
+  border-radius: inherit;
+  background: rgba(0,0,0,.1);
+  box-shadow: 0 0 40px 20px rgba(0,0,0,.1);
+  transform: translateZ(-100px);
+}
+.popup-content {
+  background: #444;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 10px 0 10px 0;
+}
+.popup-text {
+  color: white;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 100;
+  text-align: center;
+  transform: translateZ(15px);
+}
+.popup-text b {
+  color: coral;
+  font-weight: 300;
+  transform-style: preserve-3d;
+}
+
+.popup-name {
+  font-size: 1.5rem;
+}
+
+.popup-close-tab {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  transition: .1s ease-in;
+  cursor: pointer;
+  @include d-flex(row, center, center);
+  &:hover {
+    transform: scale(1.2);
+  }
+  &> img {
+    width: 30px;
+  }
+}
+.popup-logout {
+  background: coral;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 30px auto 0;
+  @include d-flex(row, center, center);
+  transition: .1s all ease-in;
+  &:hover {
+    background: $red-light;
+  }
+  img {
+    transform: scale(1);
+    &:hover {
+      transition: .2s all ease-in;
+      transform: scale(1.15);
+    }
+  }
+}
+
+@keyframes click-wave {
+  0% {
+    height: 40px;
+    width: 40px;
+    opacity: 0.35;
+    position: relative;
+  }
+  100% {
+    height: 200px;
+    width: 200px;
+    margin-left: -80px;
+    margin-top: -80px;
+    opacity: 0;
+  }
+}
+
+.option-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  position: relative;
+  top: 13.33333px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  transition: all 0.15s ease-out 0s;
+  background: #cbd1d8;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 0.5rem;
+  outline: none;
+  position: relative;
+  z-index: 1000;
+}
+.popup-text div{
+  &>label:nth-child(1) {
+    color: springgreen;
+  }
+  &>label:nth-child(2) {
+    color: tomato;
+  }
+  &>label:nth-child(3) {
+    color: orange;
+  }
+}
+#option-input_1:hover, #option-input_1  {
+  background: springgreen;
+}
+#option-input_2:hover, #option-input_2 {
+  background: tomato;
+}
+#option-input_3:hover, #option-input_3 {
+  background: orange;
+}
+#option-input_1:checked {
+  background: springgreen;
+}
+#option-input_2:checked {
+  background: tomato;
+}
+#option-input_3:checked {
+  background: orange;
+}
+.option-input:checked::before {
+  height: 25px;
+  width: 25px;
+  position: absolute;
+  content: '✔';
+  display: inline-block;
+  font-size: 1rem;
+  text-align: center;
+  line-height: 25px;
+}
+#option-input_1:checked::after {
+  -webkit-animation: click-wave 0.65s;
+  -moz-animation: click-wave 0.65s;
+  animation: click-wave 0.65s;
+  background: springgreen;
+  content: '';
+  display: block;
+  position: relative;
+  z-index: 100;
+}
+#option-input_2:checked::after {
+  -webkit-animation: click-wave 0.65s;
+  -moz-animation: click-wave 0.65s;
+  animation: click-wave 0.65s;
+  background: tomato;
+  content: '';
+  display: block;
+  position: relative;
+  z-index: 100;
+}
+#option-input_3:checked::after {
+  -webkit-animation: click-wave 0.65s;
+  -moz-animation: click-wave 0.65s;
+  animation: click-wave 0.65s;
+  background: orange;
+  content: '';
+  display: block;
+  position: relative;
+  z-index: 100;
+}
+.option-input.radio {
+  border-radius: 50%;
+}
+.option-input.radio::after {
+  border-radius: 50%;
 }
 
 @include respond-to('medium') {

@@ -8,157 +8,17 @@
             <img :src="imgs.icons.SearchIcons" width="35">
           </div>
         </div>
-        <div class="webrtc-col-12 webrtc-col-lg-12 webrtc--about">
+        <div v-for="(user, index) in getListUsers" :key="index" class="webrtc-col-12 webrtc-col-lg-12 webrtc--about">
           <img
-            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_03.jpg"
+            :src="user.avatar"
             alt="avatar"
             :style="getTheme.borderAvtUser"
           >
           <div class="webrtc--info">
-            <div class="webrtc--info__name" :style="getTheme.colorBlackLight">Vincent Porter</div>
+            <div class="webrtc--info__name" :style="getTheme.colorBlackLight">{{user.username}}</div>
             <div class="webrtc--info__status">
-              <span class="webrtc--status__online"></span>
-              <span class="green">online</span>
-            </div>
-          </div>
-        </div>
-        <div class="webrtc-col-12 webrtc-col-lg-12 webrtc--about">
-          <img
-            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_02.jpg"
-            alt="avatar"
-            :style="getTheme.borderAvtUser"
-          >
-          <div class="webrtc--info">
-            <div class="webrtc--info__name" :style="getTheme.colorBlackLight">Aiden Chavez</div>
-            <div class="webrtc--info__status">
-              <span class="webrtc--status__busy"></span>
-              <span class="orange">busy</span>
-            </div>
-          </div>
-        </div>
-        <div class="webrtc-col-12 webrtc-col-lg-12 webrtc--about">
-          <img
-            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_03.jpg"
-            alt="avatar"
-            :style="getTheme.borderAvtUser"
-          >
-          <div class="webrtc--info">
-            <div class="webrtc--info__name" :style="getTheme.colorBlackLight">Mike Thomas</div>
-            <div class="webrtc--info__status">
-              <span :style="getTheme.bgOffline" class="webrtc--status__offline"></span>
-              <span :style="getTheme.colorBlackLight">offline</span>
-            </div>
-          </div>
-        </div>
-        <div class="webrtc-col-12 webrtc-col-lg-12 webrtc--about">
-          <img
-            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_04.jpg"
-            alt="avatar"
-            :style="getTheme.borderAvtUser"
-          >
-          <div class="webrtc--info">
-            <div class="webrtc--info__name" :style="getTheme.colorBlackLight">Erica Hughes</div>
-            <div class="webrtc--info__status">
-              <span class="webrtc--status__online"></span>
-              <span class="green">online</span>
-            </div>
-          </div>
-        </div>
-        <div class="webrtc-col-12 webrtc-col-lg-12 webrtc--about">
-          <img
-            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_05.jpg"
-            alt="avatar"
-            :style="getTheme.borderAvtUser"
-          >
-          <div class="webrtc--info">
-            <div class="webrtc--info__name" :style="getTheme.colorBlackLight">Ginger Johnston</div>
-            <div class="webrtc--info__status">
-              <span class="webrtc--status__busy"></span>
-              <span class="orange">busy</span>
-            </div>
-          </div>
-        </div>
-        <div class="webrtc-col-12 webrtc-col-lg-12 webrtc--about">
-          <img
-            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_06.jpg"
-            alt="avatar"
-            :style="getTheme.borderAvtUser"
-          >
-          <div class="webrtc--info">
-            <div class="webrtc--info__name" :style="getTheme.colorBlackLight">Tracy Carpenter</div>
-            <div class="webrtc--info__status">
-              <span class="webrtc--status__busy"></span>
-              <span class="orange">busy</span>
-            </div>
-          </div>
-        </div>
-        <div class="webrtc-col-12 webrtc-col-lg-12 webrtc--about">
-          <img
-            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_07.jpg"
-            alt="avatar"
-            :style="getTheme.borderAvtUser"
-          >
-          <div class="webrtc--info">
-            <div class="webrtc--info__name" :style="getTheme.colorBlackLight">Christian Kelly</div>
-            <div class="webrtc--info__status">
-              <span class="webrtc--status__online"></span>
-              <span class="green">online</span>
-            </div>
-          </div>
-        </div>
-        <div class="webrtc-col-12 webrtc-col-lg-12 webrtc--about">
-          <img
-            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_08.jpg"
-            alt="avatar"
-            :style="getTheme.borderAvtUser"
-          >
-          <div class="webrtc--info">
-            <div class="webrtc--info__name" :style="getTheme.colorBlackLight">Vincent Klarkent</div>
-            <div class="webrtc--info__status">
-              <span class="webrtc--status__online"></span>
-              <span class="green">online</span>
-            </div>
-          </div>
-        </div>
-        <div class="webrtc-col-12 webrtc-col-lg-12 webrtc--about">
-          <img
-            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_09.jpg"
-            alt="avatar"
-            :style="getTheme.borderAvtUser"
-          >
-          <div class="webrtc--info">
-            <div class="webrtc--info__name" :style="getTheme.colorBlackLight">Monica Ward</div>
-            <div class="webrtc--info__status">
-              <span class="webrtc--status__busy"></span>
-              <span class="orange">busy</span>
-            </div>
-          </div>
-        </div>
-        <div class="webrtc-col-12 webrtc-col-lg-12 webrtc--about">
-          <img
-            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_10.jpg"
-            alt="avatar"
-            :style="getTheme.borderAvtUser"
-          >
-          <div class="webrtc--info">
-            <div class="webrtc--info__name" :style="getTheme.colorBlackLight">Dean Henry</div>
-            <div class="webrtc--info__status">
-              <span class="webrtc--status__busy"></span>
-              <span class="orange">busy</span>
-            </div>
-          </div>
-        </div>
-        <div class="webrtc-col-12 webrtc-col-lg-12 webrtc--about">
-          <img
-            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_08.jpg"
-            alt="avatar"
-            :style="getTheme.borderAvtUser"
-          >
-          <div class="webrtc--info">
-            <div class="webrtc--info__name" :style="getTheme.colorBlackLight">Peyton Mckinney</div>
-            <div class="webrtc--info__status">
-              <span class="webrtc--status__online"></span>
-              <span class="green">online</span>
+              <span :class="{'webrtc--status__online': user.status === 'online', 'webrtc--status__busy': user.status === 'busy', 'webrtc--status__offline': user.status === 'offline', 'webrtc--status__away': user.status === 'away'}"></span>
+              <span :class="{'green': user.status === 'online', 'red': user.status === 'busy', 'orange': user.status === 'away'}">{{user.status}}</span>
             </div>
           </div>
         </div>
@@ -183,7 +43,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['getShowListUser', 'getTheme'])
+    ...mapGetters(['getShowListUser', 'getTheme', 'getListUsers'])
   }
 }
 </script>

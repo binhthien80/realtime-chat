@@ -50,7 +50,7 @@
   .webrtc--about {
     @include d-flex(row);
     padding: 10px;
-
+    cursor: pointer;
     &>img {
       width: 65px;
       height: 65px;

@@ -1,16 +1,19 @@
 <template>
-    <div class="webrtc--theme__options" ref="showTheme">
+    <div class="webrtc--theme__options" ref="showTheme" :style="getTheme.bgWheel">
         <img :src="imgs.icons.Cog" alt="" @click="showThemeOptions = !showThemeOptions">
         <div class="webrtc--theme__box" v-if="showThemeOptions">
+            <img :src="imgs.icons.Menu" alt="" @click="mulShowPopupNav(true)">
             <img :src="imgs.icons.ThemeDark" alt="" @click="setDarkTheme">
-            <img :src="imgs.icons.ThemeLight" alt="" @click="setLigthTheme">
+            <img :src="imgs.icons.ThemeLight" alt="" @click="setLightDarkTheme">
+            <img :src="imgs.icons.ThemeLightDark" alt="" @click="setLigthTheme">
+            <img :src="imgs.icons.ThemeDarkLight" alt="" @click="setDarkLightTheme">
         </div>
     </div>
 </template>
 <script>
 import imgs from '@/router/images.js'
 
-import { mapActions } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
   name: 'ThemeOptions',
@@ -20,15 +23,13 @@ export default {
       showThemeOptions: false
     }
   },
-  methods: {
-    ...mapActions(['setLigthTheme', 'setDarkTheme']),
-    outsideClickListenerNav (e) {
-    //   this.showThemeOptions = _.find([...e.path], i => i === this.$refs.showTheme) !== undefined
-    //   console.log(this.showThemeOptions)
-    }
+  computed: {
+    ...mapGetters(['getTheme'])
   },
-  created () {
-    // document.addEventListener('mouseup', this.outsideClickListenerNav)
+  methods: {
+    ...mapActions(['setLigthTheme', 'setDarkTheme', 'setDarkLightTheme', 'setLightDarkTheme', 'mulShowPopupNav']),
+    outsideClickListenerNav (e) {
+    }
   }
 }
 </script>

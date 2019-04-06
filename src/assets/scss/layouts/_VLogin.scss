@@ -13,6 +13,14 @@
   position: relative;
   width: 100vw;
 }
+.webrtc-social {
+  &>div {
+    @include d-flex(row, center, center);
+    &>img {
+      margin-left: 15px; 
+    }
+  }
+}
 
 h1,
 p {
@@ -39,6 +47,24 @@ p {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+.open-popup {
+  color: rgba($color: $white, $alpha: .2);
+  text-decoration: none;
+  width: 100%;
+  font-size: 1.2rem;
+  padding: 7px;
+  box-sizing: border-box;
+
+  @include d-flex(row, space-around, center);
+  transition: .2s all ease-in-out;
+  border-radius: 4px;
+  border: 2px solid rgba($color: $white, $alpha: .2);
+
+  &:hover {
+    background: darken($color: $orange, $amount: 10);
+    color: rgba($color: $white, $alpha: 1);
+  }
 }
 
 .buttons {
@@ -124,6 +150,11 @@ form input[type='submit'] {
   font: inherit;
   padding: 1rem;
   width: 100%;
+}
+
+form input[type='password'],
+form input[type='submit'] {
+  cursor: pointer;
 }
 
 form input[type='password'],

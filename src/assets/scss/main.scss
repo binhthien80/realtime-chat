@@ -1,5 +1,6 @@
 // import link download font family
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700");
+@import url("https://cdn.jsdelivr.net/npm/animate.css@3.5.1");
 
 $font-lato: 'Lato',
 sans-serif;
@@ -16,6 +17,7 @@ body {
 
 // base
 @import 'base/global';
+@import 'base/animate';
 
 // layout
 @import 'layouts/VHome';
@@ -25,3 +27,4 @@ body {
 @import 'components/VListUsers';
 @import 'components/VChatBox';
 @import 'components/VThemeOptions';
+@import 'components/VImages';
